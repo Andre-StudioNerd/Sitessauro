@@ -121,6 +121,17 @@ $(document).ready(function () {
      	<!-- Slider Carousel
         ================================================== -->
         <div class="span8">
+
+            <ul id="sliders">
+                <!-- 
+                    Define uma classe no primeiro item, 
+                    para garantir que será mostrado
+                    ao acessar a página
+                -->
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-2.jpg" alt="slider" /></a></li>
+                <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-3.jpg" alt="slider" /></a></li>
+            </ul>
             <div class="flexslider slider_espaco">
               <ul class="slides">
                 <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a></li>
@@ -432,6 +443,6 @@ $(document).ready(function () {
     
     <!-- Scroll to Top -->  
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
-    
+    <script src="js/slider.js"></script>
 </body>
 </html>
