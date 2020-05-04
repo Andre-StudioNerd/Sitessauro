@@ -35,8 +35,8 @@ body {background: #bff7c0;}
 
 .slider {
 	display: block;
-	height: 293px;
-	width: 600px;
+	height: auto;
+	width: 100%;
 	margin: auto;
 	margin-top: 20px;
 	position: relative;
@@ -49,7 +49,7 @@ body {background: #bff7c0;}
 	
 	.slider img {
 	margin: auto;
-	height: 100%;
+	height: auto;
 	width: 100%;
 	vertical-align: top;
 	} 
