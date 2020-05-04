@@ -30,6 +30,28 @@ body {background: #bff7c0;}
 	
 }
 
+.slider-container{
+	width: 100%;
+	height:auto;
+}
+.image-container{
+	width: 100%;
+	height: auto;
+	position: relative;
+	transition: left 2s;
+	-webkit-transition: left 2s;
+	-moz-transition: left 2s;
+	-o-transition: left 2s;
+
+
+}
+.slider-image{
+	float: left;
+	margin: auto;
+	padding: 0px;
+
+}
+
 .slider_espaco{
 	
 	
