@@ -27,6 +27,17 @@ body {background: #bff7c0;}
 	width: 100%;
 	height: auto;
 }
+
+#slider{
+	overflow: hidden;
+}
+
+#slider figure{
+	position:relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+}
   
   
 
