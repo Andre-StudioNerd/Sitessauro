@@ -33,7 +33,13 @@ body {background: #bff7c0;}
 .red li{
 	background: #f81510;
 	color: #fff;
-	font-style: bold;
+	font-weight: bold;
+}
+
+.green li{
+	background: #3fc942;
+	color: #fff;
+	font-weight: bold;
 }
 
 .slider img{
