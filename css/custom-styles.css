@@ -39,7 +39,9 @@ body {background: #bff7c0;}
 	left: 0;
 }
   
-  
+.texto_dino{
+	text-align: justify!important;
+}
 
 .slider_espaco{
 	
