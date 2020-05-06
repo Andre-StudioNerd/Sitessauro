@@ -23,9 +23,9 @@ body {background: #bff7c0;}
 
 }
 
-.project-info2 li  {
+.project-info2 li .red {
 	list-style: none;
-	
+	background: #f81510;;
     
     padding: 10px;
 }
