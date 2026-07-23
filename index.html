@@ -1,452 +1,491 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sitessauro</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitessauro - O Portal dos Gigantes do Mundo Pré-Histórico</title>
 
-<!-- CSS
-================================================== -->
-<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<link rel="stylesheet" href="css/prettyPhoto.css" />
-<link rel="stylesheet" href="css/flexslider.css" />
-<link rel="stylesheet" href="css/custom-styles.css">
+    <!-- CSS
+    ================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bangers"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/prettyPhoto.css" />
+    <link rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" href="css/custom-styles.css" />
 
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/style-ie.css"/>
-<![endif]--> 
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png" />
 
-<!-- Favicons
-================================================== -->
-<link rel="shortcut icon" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/favicon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png">
+    <!-- JS
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.custom.js"></script>
 
-<!-- JS
-================================================== -->
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.custom.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#btn-blog-next").click(function () {
+          $("#blogCarousel").carousel("next");
+        });
+        $("#btn-blog-prev").click(function () {
+          $("#blogCarousel").carousel("prev");
+        });
 
-    $("#btn-blog-next").click(function () {
-      $('#blogCarousel').carousel('next')
-    });
-     $("#btn-blog-prev").click(function () {
-      $('#blogCarousel').carousel('prev')
-    });
+        $("#btn-client-next").click(function () {
+          $("#clientCarousel").carousel("next");
+        });
+        $("#btn-client-prev").click(function () {
+          $("#clientCarousel").carousel("prev");
+        });
+      });
 
-     $("#btn-client-next").click(function () {
-      $('#clientCarousel').carousel('next')
-    });
-     $("#btn-client-prev").click(function () {
-      $('#clientCarousel').carousel('prev')
-    });
-    
-});
+      $(window).load(function () {
+        $(".flexslider").flexslider({
+          animation: "slide",
+          slideshow: true,
+          start: function (slider) {
+            $("body").removeClass("loading");
+          },
+        });
+      });
+    </script>
+  </head>
 
- $(window).load(function(){
-
-    $('.flexslider').flexslider({
-        animation: "slide",
-        slideshow: true,
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-    });  
-});
-
-</script>
-
-</head>
-
-<body class="home">
-    <!-- Color Bars (above header)-->
-	
-    
+  <body class="home">
     <div class="container">
-    
-      <div class="row header"><!-- Begin Header -->
-      
+      <div class="row header">
+        <!-- Begin Header -->
+
         <!-- Logo
         ================================================== -->
         <div class="span5 logo">
-        	<a href="index.html"><img src="img/logo.png" alt="" /></a>
-            <h5 class="cor_fundo">O Portal dos Gigantes do Mundo pré-histórico</h5>
+          <a href="index.html">
+            <img src="img/logo.png" alt="Sitessauro - Logotipo" />
+          </a>
+          <h5 class="cor_fundo">
+            O Portal dos Gigantes do Mundo pré-histórico
+          </h5>
         </div>
-        
+
         <!-- Main Navigation
         ================================================== -->
         <div class="span7 navigation">
-            <div class="navbar hidden-phone">
-            
+          <div class="navbar hidden-phone">
             <ul class="nav">
-           
-            <li><a href="index.html">Home</a></li>
-            <li><a href="identidino.html">Identidino</a></li>
-            <li><a href="dinoconsulta.html">Dinoconsulta</a></li>
-           <li><a href="dinopesquisa.html">Dinopesquisa</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="dinoconsulta.html">Dinoconsulta</a></li>
+              <li><a href="dinopesquisa.html">Dinopesquisa</a></li>
             </ul>
-           
+          </div>
+
+          <!-- Mobile Nav
+          ================================================== -->
+          <form action="#" id="mobile-nav" class="visible-phone">
+            <div class="mobile-nav-select">
+              <select
+                class="select_menu"
+                onchange="if (this.value) window.open(this.value, '_top');"
+              >
+                <option value="">Menu</option>
+                <option value="/">Home</option>
+                <option value="dinoconsulta.html">Dinoconsulta</option>
+                <option value="dinopesquisa.html">Dinopesquisa</option>
+              </select>
             </div>
-
-            <!-- Mobile Nav
-            ================================================== -->
-            <form action="#" id="mobile-nav" class="visible-phone">
-                <div class="mobile-nav-select">
-                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-                    <option value="">Menu</option>
-                    <option value="index.html">Home</option>
-                        <option value="identidino.html">Identidino</option>
-                        <option value="dinoconsulta.html">Dinoconsula</option>
-                        <option value="dinopesquisa.html">Dinopesquisa</option>
-                    
-                </select>
-                </div>
-                </form>
-
+          </form>
         </div>
-        
-      </div><!-- End Header -->
-     
-    <div class="row headline"><!-- Begin Headline -->
-    
-     	<!-- Slider Carousel
+      </div>
+      <!-- End Header -->
+
+      <div class="row headline">
+        <!-- Begin Headline -->
+
+        <!-- Slider Carousel
         ================================================== -->
         <div class="span8">
-            
-
-            
-            <div class="flexslider slider_espaco slider">
-                
-               <div id="slider" class="slider">
-                   <figure class="slider">
-                    <img src="img/dino_home.jpg" class="slider" />
-                    
-
-                   </figure>
-
-               </div>
-
-
-
-
-
-                
-            </div>
+          <div class="flexslider slider_espaco">
+            <ul class="slides">
+              <li>
+                <img src="img/dino_home.jpg" alt="Dinossauro em destaque 1" />
+              </li>
+            </ul>
+          </div>
         </div>
-        
+
         <!-- Headline Text
         ================================================== -->
-        
         <div class="span4">
-        	
-            <p class="lead">Os dinossauros, sem dúvidas, mexem com o imaginário de jovens e adultos. Ficamos muitas vezes impressionados com o tamanho de algumas espécies, com a ferocidade de outras e ainda com a ideia de que espécies que dominaram a Terra por tanto tempo simplesmente não estão presentes nos dias atuais.</p>
-           
-           
+          <p class="lead">
+            Os dinossauros, sem dúvidas, mexem com o imaginário de jovens e
+            adultos. Ficamos muitas vezes impressionados com o tamanho de
+            algumas espécies, com a ferocidade de outras e ainda com a ideia de
+            que espécies que dominaram a Terra por tanto tempo simplesmente não
+            estão presentes nos dias atuais.
+          </p>
         </div>
-        
-    </div><!-- End Headline -->
-   
-    
-    <div class="row gallery-row"><!-- Begin Gallery Row --> 
-      
-    	<div class="span12">
-            <h5 class="title-bg cor_fundo">Lista de Dinos
-                
-            </h5>
-    	
-        <!-- Gallery Thumbnails
-        ================================================== -->
+      </div>
+      <!-- End Headline -->
 
-            <div class="row clearfix no-margin">
+      <div class="row gallery-row">
+        <!-- Begin Gallery Row -->
+
+        <div class="span12">
+          <h5 class="title-bg cor_fundo">Lista de Dinos</h5>
+
+          <!-- Gallery Thumbnails
+          ================================================== -->
+          <div class="row clearfix no-margin">
             <ul class="gallery-post-grid holder">
+              <!-- Item 1: Alossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-1"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=alossauro">
+                  <img
+                    class="img_card"
+                    src="img/alossauros.jpg"
+                    alt="Alossauro"
+                  />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=alossauro">Alossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 1 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/alossauros.jpg" class="item-zoom-link lightbox" title="Alossauro" data-rel="prettyPhoto"></a>
-                                <a href="alossauro.html" class="item-details-link">Alossauro</a>
-                            </span>
-                        </span>
-                        <a href="alossauro.html"><img src="img/alossauros.jpg" alt="Alossauro"></a>
-                        <span class="project-details"><a href="alossauro.html">Alossauro</a></span>
-                    </li>
+              <!-- Item 2: Tiranossauro Rex -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-2"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=trex">
+                  <img src="img/tiranorex.jpg" alt="Tiranossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=trex">Tiranossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 2 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/tiranorex.jpg" class="item-zoom-link lightbox" title="Tiranossauro" data-rel="prettyPhoto"></a>
-                                <a href="trex.html" class="item-details-link">Tiranossauro</a>
-                            </span>
-                        </span>
-                        <a href="trex.html"><img src="img/tiranorex.jpg" alt="Tiranossauro"></a>
-                        <span class="project-details"><a href="trex.html">Tiranossauro</a></span>
-                    </li>
+              <!-- Item 3: Apatossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-3"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=apatossauro">
+                  <img src="img/apatossauro.jpg" alt="Apatossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=apatossauro">Apatossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 3 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/apatossauro.jpg" class="item-zoom-link lightbox" title="Apatossauro" data-rel="prettyPhoto"></a>
-                                <a href="apatossauro.html" class="item-details-link">Apatossauro</a>
-                            </span>
-                        </span>
-                        <a href="apatossauro.html"><img src="img/apatossauro.jpg" alt="Alossauro"></a>
-                        <span class="project-details"><a href="apatossauro.html">Apatossauro</a></span>
-                    </li>
+              <!-- Item 4: Triceratops -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-4"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=triceratops">
+                  <img src="img/triceratops.jpg" alt="Triceratops" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=triceratops">Triceratops</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 4 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/triceratops.jpg" class="item-zoom-link lightbox" title="Triceratops" data-rel="prettyPhoto"></a>
-                                <a href="triceratops.htm" class="item-details-link">Triceratops</a>
-                            </span>
-                        </span>
-                        <a href="triceratops.html"><img src="img/triceratops.jpg" alt="Triceratops"></a>
-                        <span class="project-details"><a href="triceratops.htm">Triceratops</a></span>
-                    </li>
+              <!-- Item 5: Estegossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-5"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=estegossauro">
+                  <img src="img/estegossauro.jpg" alt="Estegossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=estegossauro">Estegossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 5 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/estegossauro.jpg" class="item-zoom-link lightbox" title="Estegossauro" data-rel="prettyPhoto"></a>
-                                <a href="estegossauro.html" class="item-details-link">Estegossauro</a>
-                            </span>
-                        </span>
-                        <a href="estegossauro.html"><img src="img/estegossauro.jpg" alt="Alossauro"></a>
-                        <span class="project-details"><a href="estegossauro.html">Estegossauro</a></span>
-                    </li>
+              <!-- Item 6: Anquilossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-6"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=anquilossauro">
+                  <img src="img/anquilossauro.jpg" alt="Anquilossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=anquilossauro">Anquilossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 6 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/anquilossauro.jpg" class="item-zoom-link lightbox" title="Anquilossauro" data-rel="prettyPhoto"></a>
-                                <a href="anquilossauro.html" class="item-details-link">Anquilossauro</a>
-                            </span>
-                        </span>
-                        <a href="anquilossauro.html"><img src="img/anquilossauro.jpg" alt="Anquilossauro"></a>
-                        <span class="project-details"><a href="anquilossauro.html">Anquilossauro</a></span>
-                    </li>
+              <!-- Item 7: Hadrossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-7"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=hadrossauro">
+                  <img src="img/hadrossauro.jpg" alt="Hadrossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=hadrossauro">Hadrossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 7 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/hadrossauro.jpg" class="item-zoom-link lightbox" title="Hadrossauro" data-rel="prettyPhoto"></a>
-                                <a href="hadrossauro.html" class="item-details-link">Hadrosssauro</a>
-                            </span>
-                        </span>
-                        <a href="hadrossauro.html"><img src="img/hadrossauro.jpg" alt="hadrossauro"></a>
-                        <span class="project-details"><a href="hadrossauro.html">Hadrossauro</a></span>
-                    </li>
+              <!-- Item 8: Braquiossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-8"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=braquiossauro">
+                  <img src="img/braquiossauro.jpg" alt="Braquiossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=braquiossauro">Braquiossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 8 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/braquiossauro.jpg" class="item-zoom-link lightbox" title="Braquiossauro" data-rel="prettyPhoto"></a>
-                                <a href="braquiossauro.html" class="item-details-link">Braquiossauro</a>
-                            </span>
-                        </span>
-                        <a href="braquiossauro.html"><img src="img/braquiossauro.jpg" alt="Braquiossauro"></a>
-                        <span class="project-details"><a href="braquiossauro.html">Braquiossauro</a></span>
-                    </li>
+              <!-- Item 9: Velociraptor -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-9"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=velociraptor">
+                  <img src="img/velociraptor.jpg" alt="Velociraptor" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=velociraptor">Velociraptor</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 9 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/velociraptor.jpg" class="item-zoom-link lightbox" title="velociraptor" data-rel="prettyPhoto"></a>
-                                <a href="velociraptor.html" class="item-details-link">Velociraptor</a>
-                            </span>
-                        </span>
-                        <a href="velociraptor.html"><img src="img/velociraptor.jpg" alt="Velociraptor"></a>
-                        <span class="project-details"><a href="velociraptor.html">Velociraptor</a></span>
-                    </li>
+              <!-- Item 10: Parassaurolofo -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-10"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=parassaurolofo">
+                  <img src="img/Parassaurolofo.jpg" alt="Parassaurolofo" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=parassaurolofo">Parassaurolofo</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 10 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/Parassaurolofo.jpg" class="item-zoom-link lightbox" title="Parassaurolofo" data-rel="prettyPhoto"></a>
-                                <a href="Parassaurolofo.html" class="item-details-link">Parassaurolofo</a>
-                            </span>
-                        </span>
-                        <a href="Parassaurolofo.html"><img src="img/Parassaurolofo.jpg" alt="Parassaurolofo"></a>
-                        <span class="project-details"><a href="Parassaurolofo.html">Parassaurolofo</a></span>
-                    </li>
+              <!-- Item 11: Argentinossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-11"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=argentinossauro">
+                  <img src="img/argentinossauro.jpg" alt="Argentinossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=argentinossauro">Argentinossauro</a>
+                </span>
+              </li>
 
-                    <!-- Gallery Item 11 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/argentinossauro.jpg" class="item-zoom-link lightbox" title="Argentinossauro" data-rel="prettyPhoto"></a>
-                                <a href="argentinossauro.html" class="item-details-link">Argentinossauro</a>
-                            </span>
-                        </span>
-                        <a href="argentinossauro.html"><img src="img/argentinossauro.jpg" alt="Alossauro"></a>
-                        <span class="project-details"><a href="argentinossauro.html">Argentinossauro</a></span>
-                    </li>
+              <!-- Item 12: Espinossauro -->
+              <li
+                class="span3 gallery-item"
+                data-id="id-12"
+                data-type="illustration"
+              >
+                <a href="detalhes.html?id=espinossauro">
+                  <img src="img/espinossauro.jpg" alt="Espinossauro" />
+                </a>
+                <span class="project-details">
+                  <a href="detalhes.html?id=espinossauro">Espinossauro</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Gallery Row -->
 
-                    <!-- Gallery Item 12 -->
-                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/espinossauro.jpg" class="item-zoom-link lightbox" title="Espinossauro" data-rel="prettyPhoto"></a>
-                                <a href="estegossauro.html" class="item-details-link">Espinossauro</a>
-                            </span>
-                        </span>
-                        <a href="espinossauro.html"><img src="img/espinossauro.jpg" alt="Espinossauro"></a>
-                        <span class="project-details"><a href="espinossauro.html">Espinossauro</a></span>
-                    </li>
-                </ul>
-                </div>
-            </div>
- 
-    </div><!-- End Gallery Row -->
-    
-    <div class="row"><!-- Begin Bottom Section -->
-    
-    	<!-- Blog Preview
+      <div class="row">
+        <!-- Begin Bottom Section -->
+
+        <!-- Blog Preview
         ================================================== -->
-    	<div class="span6">
-
-            
-
-        <div id="blogCarousel" class="carousel slide ">
-
+        <div class="span6">
+          <div id="blogCarousel" class="carousel slide">
             <!-- Carousel items -->
             <div class="carousel-inner">
+              <div class="active item">
+                <a href="#">
+                  <img
+                    src="img/horacio.jpg"
+                    alt="Imagem Horácio"
+                    class="align-left blog-thumb-preview"
+                  />
+                </a>
+                <div class="post-info clearfix">
+                  <h5 class="pesquisa_title">Quem sou eu</h5>
+                  <ul class="blog-details-preview">
+                    <li class="index_text">
+                      <i class="icon-user"></i>
+                      <strong>
+                        Postado por: Professor Eduardo Campos da Silva
+                      </strong>
+                    </li>
 
-                 <!-- Blog Item 1 -->
-                <div class="active item">
-                    <a href="blog-single.htm"><img src="img/horacio.jpg" alt="" class="align-left blog-thumb-preview" /></a>
-                    <div class="post-info clearfix">
-                        <h5>Quem sou eu</h5>
-                        <ul class="blog-details-preview">
-                            
-                            <li><i class="icon-user"></i><strong>Postado por: Professor Eduardo</strong></li>
-                            <li><i class="icon-home"></i><strong>Cidade: Barretos-SP</strong></li>
-                            <li><i class="icon-edit"></i><strong>Dedicado aos meus queridos alunos.</strong></li>
-                           
-                        </ul>
-                    </div>
-                    
+                    <li class="index_text">
+                      <i class="icon-home"></i>
+                      <strong>Cidade: Barretos-SP</strong>
+                    </li>
+
+                    <li class="index_text">
+                      <i class="icon-edit"></i>
+                      <strong>Dedicado aos meus queridos alunos.</strong>
+                    </li>
+                  </ul>
                 </div>
-
-                
-
-                
-                
+              </div>
             </div>
-            </div> 	
+          </div>
         </div>
-        
+
         <!-- Client Area
         ================================================== -->
         <div class="span6">
-
-            
-
-            <!-- Client Testimonial Slider-->
-            <div id="clientCarousel" class="carousel slide no-margin">
-            <!-- Carousel items -->
+          <div id="clientCarousel" class="carousel slide no-margin">
             <div class="carousel-inner">
-
-                <div class="active item">
-                    <p class="quote-text">"O homem, com suas nobres qualidades, ainda carrega no corpo a marca indelével de sua origem modesta.
-"<cite>- Charles Darwin</cite></p>
-                </div>
-
-                
-
-              
-                
+              <div class="active item">
+                <p class="quote-text">
+                  "O homem, com suas nobres qualidades, ainda carrega no corpo a
+                  marca indelével de sua origem modesta."
+                  <cite>- Charles Darwin</cite>
+                </p>
+              </div>
             </div>
-            </div>
-
-            <!-- Client Logo Thumbs-->
-           
-
+          </div>
         </div>
-        
-    </div><!-- End Bottom Section -->
-    
-    </div> <!-- End Container -->
+      </div>
+      <!-- End Bottom Section -->
+    </div>
+    <!-- End Container -->
 
     <!-- Footer Area
-        ================================================== -->
+    ================================================== -->
+    <div class="footer-container">
+      <!-- Begin Footer -->
+      <div class="container">
+        <div class="row footer-row">
+          <div class="span3 footer-col">
+            <ul class="img-feed">
+              <li>
+                <a href="#">
+                  <img src="img/esqueleto.png" alt="Esqueleto de Dinossauro" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <h5>MENU</h5>
+            <ul class="post-list">
+              <li class="links_menu"><a href="/">HOME</a></li>
+              <li class="links_menu">
+                <a href="dinoconsulta.html">DINOCONSULTA</a>
+              </li>
+              <li class="links_menu">
+                <a href="dinopesquisa.html">DINOPESQUISA</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <h5>Links Adicionais</h5>
+            <ul class="post-list">
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UCdGpd0gNn38UKwoncZd9rmA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Canal do Pirulla
+                </a>
+              </li>
 
-	<div class="footer-container"><!-- Begin Footer -->
-    	<div class="container">
-        	<div class="row footer-row">
-                <div class="span3 footer-col">
-                    
-                    <ul class="img-feed">
-                        <li><a href="#"><img src="img/esqueleto.png" alt="Image Feed"></a></li>
-                        
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>MENU</h5>
-                    <ul class="post-list">
-                        <li><a href="index.html">HOME</a> </li>
-                        <li><a href="identidino.html">IDENTIDINO</a> </li>
-                        <li><a href="dinoconsulta.html">DINOCONSULTA</a> </li>
-                        <li><a href="dinopesquisa.html">DINOPESQUISA</a> </li>
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>Links Adicionáis</h5>
-                     <ul class="post-list">
-                        <li><a href="https://www.youtube.com/channel/UCdGpd0gNn38UKwoncZd9rmA" target="_blank">Canal do Pirulla</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCn9Erjy00mpnWeLnRqhsA1g" target="_blank">Ciência Todo Dia</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCmEClzCBDx-vrt0GuSKBd9g" target="_blank">Jovem Nerd</a></li>
-                        <li><a href="https://www.youtube.com/channel/UClu474HMt895mVxZdlIHXEA" target="_blank">Nerdologia</a></li>
-                       
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    
-                    <ul class="img-feed">
-                        <li><a href="#"><img src="img/esqueleto2.png" alt="Image Feed"></a></li>
-                        
-                    </ul>
-                </div>
-            </div>
-            <div class="row"><!-- Begin Sub Footer -->
-                <div class="span12 footer-col footer-sub">
-                    <div class="row no-margin">
-                        <div class="span6"><span class="left">Copyright 2020 | <a href="https://studionerd.com.br/" target="_blank">Desenvolvido por Studionerd.</a></span></div>
-                        <div class="span6">
-                           
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Sub Footer -->
-
-            
-
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UCmEClzCBDx-vrt0GuSKBd9g"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Jovem Nerd
+                </a>
+              </li>
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UClu474HMt895mVxZdlIHXEA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Nerdologia
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <ul class="img-feed">
+              <li>
+                <a href="#">
+                  <img
+                    src="img/esqueleto2.png"
+                    alt="Esqueleto de Dinossauro 2"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        
-    </div><!-- End Footer --> 
-    
-    
-    <!-- Scroll to Top -->  
+
+        <div class="row">
+          <!-- Begin Sub Footer -->
+          <div class="span12 footer-col footer-sub">
+            <div class="row no-margin">
+              <div class="span6">
+                <span class="left index_text">
+                  Copyright 2020 |
+                  <a
+                    href="https://github.com/Andre-StudioNerd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Desenvolvido por Studionerd.
+                  </a>
+                </span>
+              </div>
+              <div class="span6"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sub Footer -->
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Scroll to Top -->
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
-    <script src="js/slider.js"></script>
-</body>
+  </body>
 </html>

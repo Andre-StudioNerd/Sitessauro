@@ -1,242 +1,293 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sitessauro</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Sitessauro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- CSS
+    <!-- CSS
 ================================================== -->
-<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<link rel="stylesheet" href="css/prettyPhoto.css" />
-<link rel="stylesheet" href="css/flexslider.css" />
-<link rel="stylesheet" href="css/custom-styles.css">
+    <link
+      href="http://fonts.googleapis.com/css?family=Bangers"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/prettyPhoto.css" />
+    <link rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" href="css/custom-styles.css" />
 
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/style-ie.css"/>
-<![endif]--> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link rel="stylesheet" href="css/style-ie.css" />
+    <![endif]-->
 
-<!-- Favicons
+    <!-- Favicons
 ================================================== -->
-<link rel="shortcut icon" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/favicon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png" />
 
-<!-- JS
+    <!-- JS
 ================================================== -->
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.custom.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#btn-blog-next").click(function () {
+          $("#blogCarousel").carousel("next");
+        });
+        $("#btn-blog-prev").click(function () {
+          $("#blogCarousel").carousel("prev");
+        });
 
-    $("#btn-blog-next").click(function () {
-      $('#blogCarousel').carousel('next')
-    });
-     $("#btn-blog-prev").click(function () {
-      $('#blogCarousel').carousel('prev')
-    });
+        $("#btn-client-next").click(function () {
+          $("#clientCarousel").carousel("next");
+        });
+        $("#btn-client-prev").click(function () {
+          $("#clientCarousel").carousel("prev");
+        });
+      });
 
-     $("#btn-client-next").click(function () {
-      $('#clientCarousel').carousel('next')
-    });
-     $("#btn-client-prev").click(function () {
-      $('#clientCarousel').carousel('prev')
-    });
-    
-});
+      $(window).load(function () {
+        $(".flexslider").flexslider({
+          animation: "slide",
+          slideshow: true,
+          start: function (slider) {
+            $("body").removeClass("loading");
+          },
+        });
+      });
+    </script>
+  </head>
 
- $(window).load(function(){
-
-    $('.flexslider').flexslider({
-        animation: "slide",
-        slideshow: true,
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-    });  
-});
-
-</script>
-
-</head>
-
-<body class="home">
+  <body class="home">
     <!-- Color Bars (above header)-->
-	
-    
+
     <div class="container">
-    
-      <div class="row header"><!-- Begin Header -->
-      
+      <div class="row header">
+        <!-- Begin Header -->
+
         <!-- Logo
         ================================================== -->
         <div class="span5 logo">
-        	<a href="index.html"><img src="img/logo.png" alt="" /></a>
-            <h5 class="cor_fundo">O Portal dos Gigantes do Mundo pré-histórico</h5>
+          <a href="index.html"><img src="img/logo.png" alt="" /></a>
+          <h5 class="cor_fundo">
+            O Portal dos Gigantes do Mundo pré-histórico
+          </h5>
         </div>
-        
+
         <!-- Main Navigation
         ================================================== -->
         <div class="span7 navigation">
-            <div class="navbar hidden-phone">
-            
+          <div class="navbar hidden-phone">
             <ul class="nav">
-           
-                <li><a href="index.html">Home</a></li>
-                <li><a href="identidino.html">Identidino</a></li>
-                <li><a href="dinoconsulta.html">Dinoconsulta</a></li>
-               <li><a href="dinopesquisa.html">Dinopesquisa</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="dinoconsulta.html">Dinoconsulta</a></li>
+              <li><a href="dinopesquisa.html">Dinopesquisa</a></li>
             </ul>
-           
-            </div>
+          </div>
 
-            <!-- Mobile Nav
+          <!-- Mobile Nav
             ================================================== -->
-            <form action="#" id="mobile-nav" class="visible-phone">
-                <div class="mobile-nav-select">
-                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-                    <option value="">Menu</option>
-                    <option value="index.html">Home</option>
-                        <option value="identidino.html">Identidino</option>
-                        <option value="dinoconsulta.html">Dinoconsula</option>
-                        <option value="dinopesquisa.html">Dinopesquisa</option>
-                    
-                </select>
-                </div>
-                </form>
-
+          <form action="#" id="mobile-nav" class="visible-phone">
+            <div class="mobile-nav-select">
+              <select
+                class="select_menu"
+                onchange="
+                  window.open(this.options[this.selectedIndex].value, '_top')
+                "
+              >
+                <option value="">Menu</option>
+                <option value="/">Home</option>
+                <option value="dinoconsulta.html">Dinoconsula</option>
+                <option value="dinopesquisa.html">Dinopesquisa</option>
+              </select>
+            </div>
+          </form>
         </div>
-        
-      </div><!-- End Header -->
-     
-    <!-- Page Content
-    ================================================== --> 
-    
-    <!-- Title Header -->
-    <div class="row">
+      </div>
+      <!-- End Header -->
+
+      <!-- Page Content
+    ================================================== -->
+
+      <!-- Title Header -->
+      <div class="row">
         <div class="span12">
-            <h2>DinoPesquisa</h2>
-           
+          <h2>DinoPesquisa</h2>
 
-            <!-- Carousel
+          <!-- Carousel
             ================================================== -->
-           
 
-            
-            <div class="row">
-                <div class="span4">
-                    <img src="img/fossil.jpg" alt="image">
-                    <h5>O que é um Fossil</h5>
-                    <p style="text-align: justify;">Fósseis são os restos das impressões de plantas e animais, presenvadas nas rochas. Com frequência,as partes mais duras, como dentes e ossos, são preservadas.</p>
-                    
-                </div>
-                <div class="span4">
-                    <img src="img/dino.jpg" alt="image">
-                    <h5>A Origem do nome</h5>
-                    <p style="text-align: justify;">A palavra "dinossauro" foi inventada em 1942 pelo professor Richard Owen, estudioso de fósseis na Inglaterra. Ele descobriu que alguns dos maiores fósseis perteciam a um grupo especial de animais sem nome. Então batizou-os de dinossauros, que significa "largatos terríveis". </p>
-                    
-                </div>
-                <div class="span4">
-                    <img src="img/tuatara.jpg" alt="image">
-                    <h5>Fóssil Vivo</h5>
-                    <p style="text-align: justify;">É uma espécie animal que sobrevive sem sobrer mutações há milhões de anos. OS ancentrais de um fóssil vivo habitam a Terra há milhões de anos e seus descentendes, quase idênticos, vivem até hoje. O Tuatara é um bom exemplo, assim como um grande peixe chamado Celacanto. A maior parte das espécies vai mudando com a passagem do tempo.</p>
-                    
-                </div>
+          <div class="row">
+            <div class="span4">
+              <img src="img/fossil.jpg" alt="image" />
+              <h5 class="pesquisa_title">O que é um Fossil</h5>
+              <p class="pesquisa_text">
+                Fósseis são os restos das impressões de plantas e animais,
+                presenvadas nas rochas. Com frequência,as partes mais duras,
+                como dentes e ossos, são preservadas.
+              </p>
             </div>
-            <div class="row">
-                <div class="span4">
-                    <img src="img/pele_dino.jpg" alt="image">
-                    <h5>A pele</h5>
-                    <p style="text-align: justify;">A pele dos dinossauros não era úmida como a das rãs, e sim seca. Tal como a pele humana,, protegia contra chuva, frio e umidade, sendo perfeitamente apropriada para se viver em terreno seco. Saurópodes como o Apatosaurus possuíam escamas, ligadas por pele flexível que permitia movimentos.</p>
-                    
-                </div>
-                <div class="span4">
-                    <img src="img/ovo_dino.jpg" alt="image">
-                    <h5>Os ovos</h5>
-                    <p style="text-align: justify;">Os ovos de dinossauros variam de tamanho, dependendo da espécie. A maioria dos ovos maiores são fósseis coletados na década de 1990, em rochas do Cretáceo existentes na China. Eles possuem 60 cm de longitude e 20 cm de diâmetro. </p>
-                    
-                </div>
-                <div class="span4">
-                    <img src="img/vida_dino.jpg" alt="image">
-                    <h5>Vida</h5>
-                    <p style="text-align: justify;">É quase impossível definir exatamente com que idade os dinossauros morriam. Alguns cientistas estão tentando achar o índice de crescimento dos ossos de algumas espécies para vir a definir a sua idade. Acreditam que o Massospondylus, um pequeno dinossauro, viveu entre 30 e 70 anos, o que é quase a vida de um ser humano
-
-               </p>
-                    
-                </div>
+            <div class="span4">
+              <img src="img/dino.jpg" alt="image" />
+              <h5 class="pesquisa_title">A Origem do nome</h5>
+              <p class="pesquisa_text">
+                A palavra "dinossauro" foi inventada em 1942 pelo professor
+                Richard Owen, estudioso de fósseis na Inglaterra. Ele descobriu
+                que alguns dos maiores fósseis perteciam a um grupo especial de
+                animais sem nome. Então batizou-os de dinossauros, que significa
+                "largatos terríveis".
+              </p>
             </div>
-            
-
-        </div> 
+            <div class="span4">
+              <img src="img/tuatara.jpg" alt="image" />
+              <h5 class="pesquisa_title">Fóssil Vivo</h5>
+              <p class="pesquisa_text">
+                É uma espécie animal que sobrevive sem sobrer mutações há
+                milhões de anos. OS ancentrais de um fóssil vivo habitam a Terra
+                há milhões de anos e seus descentendes, quase idênticos, vivem
+                até hoje. O Tuatara é um bom exemplo, assim como um grande peixe
+                chamado Celacanto. A maior parte das espécies vai mudando com a
+                passagem do tempo.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <img src="img/pele_dino.jpg" alt="image" />
+              <h5 class="pesquisa_title">A pele</h5>
+              <p class="pesquisa_text">
+                A pele dos dinossauros não era úmida como a das rãs, e sim seca.
+                Tal como a pele humana,, protegia contra chuva, frio e umidade,
+                sendo perfeitamente apropriada para se viver em terreno seco.
+                Saurópodes como o Apatosaurus possuíam escamas, ligadas por pele
+                flexível que permitia movimentos.
+              </p>
+            </div>
+            <div class="span4">
+              <img src="img/ovo_dino.jpg" alt="image" />
+              <h5 class="pesquisa_title">Os ovos</h5>
+              <p class="pesquisa_text">
+                Os ovos de dinossauros variam de tamanho, dependendo da espécie.
+                A maioria dos ovos maiores são fósseis coletados na década de
+                1990, em rochas do Cretáceo existentes na China. Eles possuem 60
+                cm de longitude e 20 cm de diâmetro.
+              </p>
+            </div>
+            <div class="span4">
+              <img src="img/vida_dino.jpg" alt="image" />
+              <h5 class="pesquisa_title">Vida</h5>
+              <p class="pesquisa_text">
+                É quase impossível definir exatamente com que idade os
+                dinossauros morriam. Alguns cientistas estão tentando achar o
+                índice de crescimento dos ossos de algumas espécies para vir a
+                definir a sua idade. Acreditam que o Massospondylus, um pequeno
+                dinossauro, viveu entre 30 e 70 anos, o que é quase a vida de um
+                ser humano
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    </div> <!-- End Container -->
+    <!-- End Container -->
 
     <!-- Footer Area
         ================================================== -->
 
-	<div class="footer-container"><!-- Begin Footer -->
-    	<div class="container">
-        	<div class="row footer-row">
-                <div class="span3 footer-col">
-                    
-                    <ul class="img-feed">
-                        <li><a href="#"><img src="img/esqueleto.png" alt="Image Feed"></a></li>
-                        
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>MENU</h5>
-                    <ul class="post-list">
-                        <li><a href="index.html">HOME</a> </li>
-                        <li><a href="identidino.html">IDENTIDINO</a> </li>
-                        <li><a href="dinoconsulta.html">DINOCONSULTA</a> </li>
-                        <li><a href="dinopesquisa.html">DINOPESQUISA</a> </li>
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>Links Adicionáis</h5>
-                    <ul class="post-list">
-                        <li><a href="https://www.youtube.com/channel/UCdGpd0gNn38UKwoncZd9rmA" target="_blank">Canal do Pirulla</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCn9Erjy00mpnWeLnRqhsA1g" target="_blank">Ciência Todo Dia</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCmEClzCBDx-vrt0GuSKBd9g" target="_blank">Jovem Nerd</a></li>
-                        <li><a href="https://www.youtube.com/channel/UClu474HMt895mVxZdlIHXEA" target="_blank">Nerdologia</a></li>
-                       
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    
-                    <ul class="img-feed">
-                        <li><a href="#"><img src="img/esqueleto2.png" alt="Image Feed"></a></li>
-                        
-                    </ul>
-                </div>
-            </div>
+    <div class="footer-container">
+      <!-- Begin Footer -->
+      <div class="container">
+        <div class="row footer-row">
+          <div class="span3 footer-col">
+            <ul class="img-feed">
+              <li>
+                <a href="#"><img src="img/esqueleto.png" alt="Image Feed" /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <h5>MENU</h5>
+            <ul class="post-list">
+              <li class="links_menu"><a href="/">HOME</a></li>
+              <li class="links_menu">
+                <a href="dinoconsulta.html">DINOCONSULTA</a>
+              </li>
+              <li class="links_menu">
+                <a href="dinopesquisa.html">DINOPESQUISA</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <h5>Links Adicionáis</h5>
+            <ul class="post-list">
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UCdGpd0gNn38UKwoncZd9rmA"
+                  target="_blank"
+                >
+                  Canal do Pirulla
+                </a>
+              </li>
 
-            <div class="row"><!-- Begin Sub Footer -->
-                <div class="span12 footer-col footer-sub">
-                    <div class="row no-margin">
-                        <div class="span6"><span class="left">Copyright 2020 | <a href="https://studionerd.com.br/" target="_blank">Desenvolvido por Studionerd.</a></span></div>
-                        <div class="span6">
-                           
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End Sub Footer -->
-
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UCmEClzCBDx-vrt0GuSKBd9g"
+                  target="_blank"
+                >
+                  Jovem Nerd
+                </a>
+              </li>
+              <li class="links_menu">
+                <a
+                  href="https://www.youtube.com/channel/UClu474HMt895mVxZdlIHXEA"
+                  target="_blank"
+                >
+                  Nerdologia
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3 footer-col">
+            <ul class="img-feed">
+              <li>
+                <a href="#">
+                  <img src="img/esqueleto2.png" alt="Image Feed" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div><!-- End Footer --> 
-    
-    <!-- Scroll to Top -->  
+
+        <div class="row">
+          <!-- Begin Sub Footer -->
+          <div class="span12 footer-col footer-sub">
+            <div class="row no-margin">
+              <div class="span6">
+                <span class="left index_text">
+                  Copyright 2020 |
+                  <a href="https://github.com/Andre-StudioNerd" target="_blank">
+                    Desenvolvido por Studionerd.
+                  </a>
+                </span>
+              </div>
+              <div class="span6"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sub Footer -->
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Scroll to Top -->
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
-    
-</body>
+  </body>
 </html>
-	

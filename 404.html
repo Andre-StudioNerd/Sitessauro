@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sitessauro</title>
+    <script type="text/javascript">
+      // Guarda a rota acessada e redireciona para a página detalhes
+      var path = window.location.pathname;
+      var repoName = "/sitessauro"; // Coloque o nome do seu repositório aqui (se houver)
+
+      // Remove o nome do repositório do caminho
+      var cleanPath = path.replace(repoName, "");
+
+      if (cleanPath.startsWith("/dinossauro/")) {
+        var dinoId = cleanPath.split("/")[2];
+        // Redireciona mantendo o ID via hash
+        window.location.replace(repoName + "/detalhes.html#" + dinoId);
+      } else {
+        window.location.replace(repoName + "/index.html");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
