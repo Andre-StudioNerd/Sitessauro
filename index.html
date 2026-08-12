@@ -3,13 +3,13 @@
   <head>
      <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-  <meta name="description" content="Jogo da cobra feito em javascript" />
+  <meta name="description" content="Site dos dinossauros" />
   <meta name="author" content="Andre Luis Fernandes"/>
   <meta name="reply-to" content="deco.luisfernandes@gmail.com">
   <meta name="generator" content="Visual Studio Code">
   <meta name="language" content="pt-br">
   <meta name="robots" content="index,nofollow" />
-  <meta name="keywords" content="jogo, game, snake,cobra"/>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +37,10 @@
     <!-- JS
     ================================================== -->
     <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.flexslider.js"></script>
-    <script src="js/jquery.custom.js"></script>
+    <script src="js/bootstrap.js" defer></script>
+    <script src="js/jquery.prettyPhoto.js" defer></script>
+    <script src="js/jquery.flexslider.js" defer></script>
+    <script src="js/jquery.custom.js" defer></script>
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -81,7 +81,8 @@
         ================================================== -->
         <div class="span5 logo">
           <a href="index.html">
-            <img src="img/logo.png" alt="Sitessauro - Logotipo" />
+            <img src="img/logo.webp" alt="Sitessauro - Logotipo" width="465"
+                height="110" />
           </a>
           <h5 class="cor_fundo">
             O Portal dos Gigantes do Mundo pré-histórico
@@ -103,16 +104,19 @@
           ================================================== -->
           <form action="#" id="mobile-nav" class="visible-phone">
             <div class="mobile-nav-select">
-              <select
-                class="select_menu"
-                onchange="if (this.value) window.open(this.value, '_top');"
-              >
-                <option value="">Menu</option>
-                <option value="index.html">Home</option>
-                <option value="dinoconsulta.html">Dinoconsulta</option>
-                <option value="dinopesquisa.html">Dinopesquisa</option>
-              </select>
-            </div>
+  <select
+    class="select_menu"
+    aria-label="Menu de navegação"
+    onchange="
+      window.open(this.options[this.selectedIndex].value, '_top')
+    "
+  >
+    <option value="">Menu</option>
+    <option value="index.html">Home</option>
+    <option value="dinoconsulta.html">Dinoconsula</option>
+    <option value="dinopesquisa.html">Dinopesquisa</option>
+  </select>
+</div>
           </form>
         </div>
       </div>
@@ -127,7 +131,7 @@
           <div class="flexslider slider_espaco">
             <ul class="slides">
               <li>
-                <img src="img/dino_home.jpg" alt="Dinossauro em destaque 1" />
+                <img src="img/dino_home.webp" alt="Dinossauro em destaque 1" />
               </li>
             </ul>
           </div>
@@ -166,7 +170,7 @@
                 <a href="detalhes.html?id=alossauro">
                   <img
                     class="img_card"
-                    src="img/alossauros.jpg"
+                    src="img/alossauros.webp"
                     alt="Alossauro"
                   />
                 </a>
@@ -182,7 +186,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=trex">
-                  <img src="img/tiranorex.jpg" alt="Tiranossauro" />
+                  <img src="img/tiranorex.webp" alt="Tiranossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=trex">Tiranossauro</a>
@@ -196,7 +200,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=apatossauro">
-                  <img src="img/apatossauro.jpg" alt="Apatossauro" />
+                  <img src="img/apatossauro.webp" alt="Apatossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=apatossauro">Apatossauro</a>
@@ -210,7 +214,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=triceratops">
-                  <img src="img/triceratops.jpg" alt="Triceratops" />
+                  <img src="img/triceratops.webp" alt="Triceratops" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=triceratops">Triceratops</a>
@@ -224,7 +228,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=estegossauro">
-                  <img src="img/estegossauro.jpg" alt="Estegossauro" />
+                  <img src="img/estegossauro.webp" alt="Estegossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=estegossauro">Estegossauro</a>
@@ -238,7 +242,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=anquilossauro">
-                  <img src="img/anquilossauro.jpg" alt="Anquilossauro" />
+                  <img src="img/anquilossauro.webp" alt="Anquilossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=anquilossauro">Anquilossauro</a>
@@ -252,7 +256,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=hadrossauro">
-                  <img src="img/hadrossauro.jpg" alt="Hadrossauro" />
+                  <img src="img/hadrossauro.webp" alt="Hadrossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=hadrossauro">Hadrossauro</a>
@@ -266,7 +270,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=braquiossauro">
-                  <img src="img/braquiossauro.jpg" alt="Braquiossauro" />
+                  <img src="img/braquiossauro.webp" alt="Braquiossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=braquiossauro">Braquiossauro</a>
@@ -280,7 +284,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=velociraptor">
-                  <img src="img/velociraptor.jpg" alt="Velociraptor" />
+                  <img src="img/velociraptor.webp" alt="Velociraptor" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=velociraptor">Velociraptor</a>
@@ -294,7 +298,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=parassaurolofo">
-                  <img src="img/Parassaurolofo.jpg" alt="Parassaurolofo" />
+                  <img src="img/Parassaurolofo.webp" alt="Parassaurolofo" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=parassaurolofo">Parassaurolofo</a>
@@ -308,7 +312,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=argentinossauro">
-                  <img src="img/argentinossauro.jpg" alt="Argentinossauro" />
+                  <img src="img/argentinossauro.webp" alt="Argentinossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=argentinossauro">Argentinossauro</a>
@@ -322,7 +326,7 @@
                 data-type="illustration"
               >
                 <a href="detalhes.html?id=espinossauro">
-                  <img src="img/espinossauro.jpg" alt="Espinossauro" />
+                  <img src="img/espinossauro.webp" alt="Espinossauro" />
                 </a>
                 <span class="project-details">
                   <a href="detalhes.html?id=espinossauro">Espinossauro</a>
@@ -346,7 +350,7 @@
               <div class="active item">
                 <a href="#">
                   <img
-                    src="img/horacio.jpg"
+                    src="img/horacio.webp"
                     alt="Imagem Horácio"
                     class="align-left blog-thumb-preview"
                   />
@@ -407,7 +411,7 @@
             <ul class="img-feed">
               <li>
                 <a href="#">
-                  <img src="img/esqueleto.png" alt="Esqueleto de Dinossauro" />
+                  <img src="img/esqueleto.webp" alt="Esqueleto de Dinossauro" width="406" height="237" />
                 </a>
               </li>
             </ul>
@@ -462,8 +466,9 @@
               <li>
                 <a href="#">
                   <img
-                    src="img/esqueleto2.png"
+                    src="img/esqueleto2.webp"
                     alt="Esqueleto de Dinossauro 2"
+                    width="406" height="237"
                   />
                 </a>
               </li>
